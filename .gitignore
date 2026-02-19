@@ -1,0 +1,8 @@
+data/
+.venv/
+.DS_Store
+*.log
+__pycache__/
+*.pyc
+latex-informe/out/
+latex-presentacion/out/

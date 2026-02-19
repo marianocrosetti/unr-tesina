@@ -1,0 +1,7 @@
+---
+alwaysApply: true
+---
+Be concise when you code. We are doing experiments: do not catch the exceptions.
+Also try to use list comprehension when possible.
+Prefear one-liner code if it's not too messy.
+Try to make short functions when you are writing new functions.

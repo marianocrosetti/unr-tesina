@@ -1,0 +1,7 @@
+\frametitle{Ejemplo de código}
+\begin{lstlisting}[language=Python]
+# [EJEMPLO DE CODIGO]
+def ejemplo_funcion(parametro):
+    """[DESCRIPCION CORTA DE LA FUNCION]"""
+    return parametro  # Reemplazar por logica real
+\end{lstlisting}

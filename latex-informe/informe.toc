@@ -1,0 +1,119 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Resumen}{5}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Introducción}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Motivación}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Organización}{6}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Marco Teórico}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Conceptos básicos}{8}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Inteligencia artificial}{8}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2} Aprendizaje automático }{9}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Terminología del Aprendizaje Automático}{9}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Dilema sesgo-varianza y sobreajuste}{11}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Conjunto de validación}{14}{subsection.3.1.5}%
+\contentsline {subsubsection}{\numberline {3.1.5.1}Validación cruzada}{14}{subsubsection.3.1.5.1}%
+\contentsline {subsection}{\numberline {3.1.6}Elección de hiperparámetros}{15}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.7}Conjunto de test}{16}{subsection.3.1.7}%
+\contentsline {subsection}{\numberline {3.1.8}Métricas}{17}{subsection.3.1.8}%
+\contentsline {subsubsection}{\numberline {3.1.8.1}Métricas en problemas de regresión}{17}{subsubsection.3.1.8.1}%
+\contentsline {subsubsection}{\numberline {3.1.8.2}Métricas en problemas de clasificación}{17}{subsubsection.3.1.8.2}%
+\contentsline {subsubsection}{\numberline {3.1.8.3}Métricas en problemas de clasificación binaria}{19}{subsubsection.3.1.8.3}%
+\contentsline {subsubsection}{\numberline {3.1.8.4}Métricas en el problema de Verificación Automática de Firmas Manuscritas}{20}{subsubsection.3.1.8.4}%
+\contentsline {subsubsection}{\numberline {3.1.8.5}Análisis costo-beneficio para las métricas en clasificación binaria}{21}{subsubsection.3.1.8.5}%
+\contentsline {subsection}{\numberline {3.1.9}Importancia de la Metodología de Evaluación}{24}{subsection.3.1.9}%
+\contentsline {subsection}{\numberline {3.1.10}Reducción de la dimensionalidad}{24}{subsection.3.1.10}%
+\contentsline {section}{\numberline {3.2}Clasificadores}{25}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Random Forest}{25}{subsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Árboles de Decisión}{25}{subsubsection.3.2.1.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}\textit {Classification And Regression Tree (CART)}}{26}{subsubsection.3.2.1.2}%
+\contentsline {subsubsection}{\numberline {3.2.1.3}\textit {Random Forest}}{27}{subsubsection.3.2.1.3}%
+\contentsline {subsection}{\numberline {3.2.2}Support Vector Machine}{28}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Redes Neuronales Artificiales}{30}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Un poco de historia}{31}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Formulación actual}{33}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Descenso por gradiente}{35}{subsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.1}Sobre funciones de costo ``\textit {realistas}''}{35}{subsubsection.3.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.3.2}Descenso por gradiente estocástico}{37}{subsubsection.3.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3.3}Importancia de la elección adecuada del \textit {learning rate}}{38}{subsubsection.3.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Función de costo}{38}{subsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.4.1}Linearidad de gradientes respecto a última capa de activaciones}{39}{subsubsection.3.3.4.1}%
+\contentsline {subsection}{\numberline {3.3.5}Funciones de activación}{39}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Teorema Aproximación Universal}{41}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Algoritmo de \textit {backpropagation}}{42}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.8}Extensiones al algoritmo de descenso por gradiente}{43}{subsection.3.3.8}%
+\contentsline {subsubsection}{\numberline {3.3.8.1}Momentum}{44}{subsubsection.3.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.3.8.2}RMSProp}{44}{subsubsection.3.3.8.2}%
+\contentsline {subsubsection}{\numberline {3.3.8.3}Adam}{45}{subsubsection.3.3.8.3}%
+\contentsline {subsection}{\numberline {3.3.9}Inicialización de los parámetros}{45}{subsection.3.3.9}%
+\contentsline {subsection}{\numberline {3.3.10}Mejorando la generalización - técnicas de regularización}{45}{subsection.3.3.10}%
+\contentsline {subsubsection}{\numberline {3.3.10.1}\textit {Data augmentation}}{46}{subsubsection.3.3.10.1}%
+\contentsline {subsubsection}{\numberline {3.3.10.2}\textit {Batch normalization}}{47}{subsubsection.3.3.10.2}%
+\contentsline {subsubsection}{\numberline {3.3.10.3}\textit {Weigth decay}}{48}{subsubsection.3.3.10.3}%
+\contentsline {subsubsection}{\numberline {3.3.10.4}\textit {Dropout}}{49}{subsubsection.3.3.10.4}%
+\contentsline {subsection}{\numberline {3.3.11}Configurando el \textit {Learning Rate}}{50}{subsection.3.3.11}%
+\contentsline {subsubsection}{\numberline {3.3.11.1}Seteando el \textit {Learning Rate} inicial}{50}{subsubsection.3.3.11.1}%
+\contentsline {subsubsection}{\numberline {3.3.11.2}\textit {Cycle Learning Rates}}{50}{subsubsection.3.3.11.2}%
+\contentsline {subsubsection}{\numberline {3.3.11.3}\textit {One Cycle Policy}}{51}{subsubsection.3.3.11.3}%
+\contentsline {subsection}{\numberline {3.3.12}Aprendiendo las representaciones}{52}{subsection.3.3.12}%
+\contentsline {subsection}{\numberline {3.3.13}Redes Neuronales Convolucionales}{53}{subsection.3.3.13}%
+\contentsline {subsubsection}{\numberline {3.3.13.1}Convoluciones}{54}{subsubsection.3.3.13.1}%
+\contentsline {subsubsection}{\numberline {3.3.13.2}Aritmética de las convoluciones}{54}{subsubsection.3.3.13.2}%
+\contentsline {paragraph}{\numberline {3.3.13.2.1}\textit {Padding} y \textit {Stride}}{55}{paragraph.3.3.13.2.1}%
+\contentsline {paragraph}{\numberline {3.3.13.2.2}{\textit {Pooling}}}{56}{paragraph.3.3.13.2.2}%
+\contentsline {subsubsection}{\numberline {3.3.13.3}\textit {Receptive field}}{57}{subsubsection.3.3.13.3}%
+\contentsline {subsubsection}{\numberline {3.3.13.4}Visualizando las características aprendidas}{58}{subsubsection.3.3.13.4}%
+\contentsline {subsubsection}{\numberline {3.3.13.5}Redes completamente convolucionales}{58}{subsubsection.3.3.13.5}%
+\contentsline {subsubsection}{\numberline {3.3.13.6}\textit {ResNets}}{60}{subsubsection.3.3.13.6}%
+\contentsline {subsubsection}{\numberline {3.3.13.7}\textit {Fine-tuning}}{61}{subsubsection.3.3.13.7}%
+\contentsline {subsection}{\numberline {3.3.14}Arquitecturas de redes siamesas}{63}{subsection.3.3.14}%
+\contentsline {subsubsection}{\numberline {3.3.14.1}Triplet loss}{63}{subsubsection.3.3.14.1}%
+\contentsline {chapter}{\numberline {4}Formulación del problema}{65}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Preliminares}{65}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Sobre los telegramas de votación en Santa Fe}{65}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Definiendo los objetivos}{67}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Modelado del problema}{67}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Definición de los experimentos}{67}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}Desarrollo: entrenamiento y validación}{68}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}Construcción del conjunto de pares}{68}{subsubsection.4.3.2.2}%
+\contentsline {subsection}{\numberline {4.3.3}Elección de la métrica}{68}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Conjuntos de datos utilizados}{69}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Experimento 1}{69}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Experimento 2}{69}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Trabajos relacionados y estado del arte}{70}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Verificación Automática de Firmas Manuscritas}{70}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Categorías de firmas}{71}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Proceso \textit {clásico} de VAFM}{71}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Extracción de características}{73}{subsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.1}Invarianza rotacional mediante DFT}{74}{subsubsection.5.1.3.1}%
+\contentsline {subsection}{\numberline {5.1.4}Reutilizando las técnicas en nuestro problema}{74}{subsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.4.1}Entrenamiento de clasificadores y evaluación}{74}{subsubsection.5.1.4.1}%
+\contentsline {subsubsection}{\numberline {5.1.4.2}Métricas y convenciones}{75}{subsubsection.5.1.4.2}%
+\contentsline {subsection}{\numberline {5.1.5}Resultados de \cite {tesis-parodi}}{75}{subsection.5.1.5}%
+\contentsline {subsubsection}{\numberline {5.1.5.1}Críticas metodológicas}{76}{subsubsection.5.1.5.1}%
+\contentsline {paragraph}{\numberline {5.1.5.1.1}Desbalance en el conjunto de datos de entrenamiento}{76}{paragraph.5.1.5.1.1}%
+\contentsline {paragraph}{\numberline {5.1.5.1.2}Error metodológico en la evaluación de firmas ficticias}{76}{paragraph.5.1.5.1.2}%
+\contentsline {paragraph}{\numberline {5.1.5.1.3}Desbalance en el conjunto de datos de evaluación}{76}{paragraph.5.1.5.1.3}%
+\contentsline {section}{\numberline {5.2}Conjuntos de datos}{76}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}GPDS300}{76}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Problemas de similitud}{77}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Problemas clásicos similares: \textit {Face Recognition} y \textit {Face Verification}}{77}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}\textit {One-Shot Learning}}{78}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}\textit {Redes Siamesas}}{78}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}}{79}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}\textit {Image Similarity}}{79}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}\textit {Omniglot Dataset}}{79}{subsection.5.3.6}%
+\contentsline {chapter}{\numberline {6}Experimentos}{81}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Formulación del problema en la práctica}{81}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Conjuntos de datos}{81}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Conjuntos de datos curados}{81}{subsection.6.2.1}%
+\contentsline {paragraph}{\numberline {6.2.1.0.1}SigComp 2009 Train (NISDICC).}{82}{paragraph.6.2.1.0.1}%
+\contentsline {paragraph}{\numberline {6.2.1.0.2}SigComp 2009 Test (NFI).}{82}{paragraph.6.2.1.0.2}%
+\contentsline {subsection}{\numberline {6.2.2}Confección del \textit {dataset} propio (cropeo de firmas)}{82}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Resultados}{82}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Resultados utilizando la tesis de Marianela}{82}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Resultados utilizando redes siamesas}{82}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Resultados con diferentes arquitecturas de redes siamesas}{83}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Online triplet loss y offline triplet loss}{83}{subsection.6.3.4}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{84}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Construcción del conjunto de datos}{85}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Trabajo futuro}{86}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {C}Bibliograf\'{\i }a}{88}{appendix.Alph3}%

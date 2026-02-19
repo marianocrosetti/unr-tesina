@@ -1,0 +1,5 @@
+---
+description: When you are programming in interactive python file (that uses cell delimited with "# %%")
+alwaysApply: false
+---
+When you are programming in interactive python file (that uses cell delimited with "# %%"): cells must have one responsability only, you can calculate many things but ideally only one "non trivial" thing. Also include a concise comment with "#" explaining the purpose or the mission of the cell.

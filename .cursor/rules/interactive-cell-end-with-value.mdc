@@ -1,0 +1,5 @@
+---
+description: When you are programming in interactive python file (that uses cell delimited with "# %%")
+alwaysApply: false
+---
+When you are programming in interactive python file (that uses cell delimited with "# %%"), please end the cell with a value expression, so when it's run it prints something. Choose an expression useful for showing that the main calc of this cell was performed properly. You can choose more than one expression and separate by comma (making a tuple). For instance if the cell calculated a list named "my_list" you can do: my_list[:10], my_list[-10:], len(my_list)

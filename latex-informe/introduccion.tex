@@ -1,0 +1,19 @@
+\chapter{Introducción}
+
+\section{Motivación}
+
+La motivación es resolver una problemática real y compleja utilizando técnicas del estado del arte de Visión computarizada. Se presenta la ruta para resolver problemas prácticos a necesidades reales donde todas las etapas requieren de especial cuidado: recolección de datos, la formulación del problema, el planteo de métricas acordes, la confección rápida de una base de referencia (\textit{baseline}), la elección, entrenamiento y evaluación del modelo y finalmente la implementación en el entorno real.\\
+
+Como caso práctico se analizarán telegramas electorales\footnote{Documentos que se confeccionan para transmitir el resultado de una mesa de votación}, constatando que las firmas manuscritas de las autoridades de mesas\footnote{Las autoridades de mesa son el/la presidente de mesa y los/las auxiliares. Para más detalle sobre el proceso de escrutinio provisorio con asistencia digital 
+ véase \cite{unr-informe}.} estén presentes y sean coincidentes en cada una de las hojas\footnote{Las autoridades de mesas deben firmar todas las hojas del telegrama}. 
+ De ese modo se pretende detectar fallas en la confección (como que se confundan de casillero\footnote{Cada hoja del telegrama cuenta con casilleros específicos para cada autoridad. 
+ En el capítulo \ref{formulacion-del-problema} se muestra un ejemplo de telegrama electoral utilizado durante las elecciones provinciales de Santa Fe 2019, tal como muestra la figura \ref{fig:telegramas-firmas}}) de forma anticipada, o sea, antes del análisis manual por parte del centro de cómputo, ahorrando trabajo humano.
+
+Elegimos este problema puesto que es interesante: no es un clásico problema de clasificación. Sino que nuestro algoritmo deberá ser suficientemente robusto como para medir la similitud entre \textit{tipos de firmas nunca antes vistas}, de modo que pueda evaluar si dos firmas \textit{son del mismo tipo}\footnote{Entendiéndose por \textit{mismo tipo} a si son de la misma autoría. Ahondaremos en la clasificación de las firmas manuscritas en la sección \ref{veriificacion-automatica-de-firmas-manuscritas} donde se hablará del problema de \textit{Verificación Automática de Firmas Manuscritas} (VAFM).}.\\
+
+Para resolver la problemática planteada, analizamos técnicas del \textit{Estado del Arte} de \textit{Visión Computarizada} que atañen tanto al tratamiento de imágenes de firmas, como métodos que se utilizan para resolver el problema de similitud de imágenes en general. Comparamos además la \textit{performance} de métodos modernos de \textit{Aprendizaje Profundo} contra clasificadores basados en extracción manual de características propuesto en una Tesis doctoral del 2014 \cite{tesis-parodi}, mostrando mejoras sustanciales. Y finalmente, desarrollamos un método propio para el entrenamiento de representaciones, que mostramos ampliamente superador a las más prometedoras técnicas del \textit{Estado del Arte} que hemos probado. \\
+
+\section{Organización}
+
+La tesina  descompone el problema en fases: formulación del problema, elección de métricas, se presenta el problema de construir rápidamente un conjunto de datos etiquetados utilizando un \textit{baseline naive}. Luego se presenta una solución anterior a la fase del \textit{deep learning}. Se presentan métodos de vanguardia para manejar los hiper parámetros (como \textit{Cycle Policy Learning Rate}) y se toman decisiones en cuánto a la arquitectura elegida en base a trabajos preexistentes. 
+

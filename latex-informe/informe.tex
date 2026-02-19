@@ -1,0 +1,135 @@
+\documentclass[oneside]{book}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage{proof}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{alltt}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mathpartir}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{etoolbox}
+\usepackage{natbib}
+\usepackage{ulem}
+\bibliographystyle{abbrvnat}
+\setcitestyle{numbers,open={[},close={]}}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nottoc,numbib]{tocbibind}
+\hyphenchar\font=-1
+\usepackage[left=1.25in,top=1.0in,right=1.0in,bottom=1.0in]{geometry}
+\usepackage{lipsum}
+
+
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\hypersetup{
+	allcolors=black
+}
+
+\renewcommand{\contentsname}{\'Indice}
+\renewcommand\refname{Referencias}
+
+
+
+\title{Trabajo Pr\'actico Final}
+\date{\today}
+\author{
+	Crosetti, Mariano
+	\texttt{C-5994/3}
+}
+
+
+\newtcblisting{commandshell}{colback=black,colupper=white,colframe=black,
+listing only,listing options={language=sh,  keywordstyle=\color{white}, basicstyle=\small\ttfamily\bfseries, breaklines=\mathbf{true}, keepspaces=\mathbf{true}, breakatwhitespace=\mathbf{false},  captionpos=b, showstringspaces=\mathbf{false}, showtabs=\mathbf{false} },
+every listing line={\textcolor{pink}{\small\ttfamily\bfseries \$ }}}
+
+% set the default code style
+\lstset{
+    language = Haskell,
+    %frame=tblr, % draw a frame at the top and bottom of the code block
+    rulecolor=\color{black},
+    tabsize=4, % tab space width
+    breakatwhitespace=\mathbf{true},         
+    breaklines=\mathbf{true},                 
+    captionpos=b,                    
+    keepspaces=\mathbf{false},
+    showspaces=\mathbf{false},                
+    showstringspaces=\mathbf{false},
+    showtabs=\mathbf{false},
+    basicstyle=\small\ttfamily\bfseries,
+    commentstyle=\color{red}, % comment color
+  %  keywordstyle=\color{blue}, % keyword color
+    stringstyle=\color{orange} % string color
+}
+
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.7\textwidth]{imgs/unrlogo}\par
+	{\scshape\LARGE Similitud de firmas manuscritas, caso práctico para validación automática de documentos electorales.  \par}
+	\vspace{0.5cm}
+	{\scshape Tesina de Grado para la obtención del grado de Licenciado en Ciencias de la Computación \par}
+	\vspace{2cm}
+	{\large\itshape Autor: Mariano Crosetti C-5994/3\par}
+	\vspace{0.5cm}
+	{\scshape Director: Dante Zanarini \par}
+	{\scshape Co-director: Pablo Granitto \par}
+	
+	\vfill
+	{\large 31 de diciembre de 2024 \par}
+
+% Bottom of the page
+%	{\large 05 de Marzo, 2019 \par}
+\date{\today}
+\end{titlepage}
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+\newpage
+
+{\Huge Agradecimientos\\}
+
+poner agradecimientos acá. 
+antes va el resumen.
+
+\tableofcontents
+
+% Capítulos principales
+\include{resumen}
+\include{introduccion}
+\include{marco_teorico}
+\include{formulacion_del_problema}
+\include{trabajos_relacionados_y_estado_del_arte}
+\include{experimentos}
+
+% Apéndices
+\include{conclusiones}
+\appendix
+\include{construccion_del_conjunto_de_datos}
+\include{trabajo_futuro}
+
+\clearpage
+
+\textcolor{red}{Ordenar alfabeticamente la bibliografia}
+
+
+\input{informebib}
+
+\end{document}

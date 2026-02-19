@@ -1,0 +1,6 @@
+Aunque no sea lo ideal voy a tener un archivo 
+all_deps que tenga todos los imports con todas las dependencias a modulos externos
+De modo que en mis módulos poder hacer
+from all_deps import *
+
+Corregir los modulos de @src para respetar eso

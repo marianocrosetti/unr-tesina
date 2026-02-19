@@ -1,0 +1,33 @@
+
+\chapter{Construcción del conjunto de datos}
+
+Resultados al problema de presencia de firmas
+
+
+Resultados al problema de similaridad entre firmas
+- Conjunto de datos
+	- Sigcomp 2009 (citar y explicar brevemente)
+	- CEDAR (citar y explicar brevemente)
+	- Conjunto de datos propios a partir de telegramas
+	(como lo construí)
+		- recortar
+		- filtrar los lugares donde no aparecen firmas usando la solucion anterior
+		- matchear los cuadraditos entre diferentes paginas
+- Soluciones planteadas
+	- Approach I (nuestra implementacion a lo de marianela)
+	- Approach II (deep learning)
+- Experimentos y resultados
+	- Experimentos planteados (1,2,3,4)
+	- Resultados respectivos
+
+
+Se obtiene el conjunto de datos crudo sobre el cual se desea aprender. Los datos son la base del proceso y condicionarán todo el trabajo posterior. No es trivial controlar de qué manera son recolectados.
+En la academia se suelen utilizar conjuntos de estándares para los cuales por lo general existen publicaciones que detallan sus características. De este modo se garantiza que se trabaja con datos que han sido rigurosamente extraídos (por ejemplo si se trata de texto manuscrito se detalla el espesor del bolígrafo, el tipo de superficie sobre la cual se escribe, la posición respecto a los renglones, la distribución en género/edad de los voluntarios a escribir, etc). Generalmente se trata de que posean características tales que los resultados de las investigación sobre ellos puedan extrapolarse a conjuntos de datos del mismo tipo.
+Además se cuenta con de conjuntos de datos estándares que permite a los científicos comparar sus resultados.
+En trabajos de aplicación (como en la industria), es un paso muy importante que muchas veces se descuida. Una extracción incorrecta de los datos podría introducir errores en el entrenamiento difíciles de detectar. Es importante que se realice de forma iterativa y siempre visualizando los conjuntos de datos generados para garantizar una relativa sanidad de los mismos.
+Un ejemplo frecuente cuando se enseña \textit{Machine Learning} es el del entrenamiento de un detector de tanques de guerra camuflados que a primeras vistas poseía una asombrosa precisión pero luego resultó estar detectando presencia de nubes en el cielo: las fotos del escenario con los tanques habían sido tomadas un día soleado y las fotos sin los tanques un día nublado. Aparentemente esta situación anecdótica constituye un mito urbano del \textit{Machine Learning}, ver [CITA GWERN https://www.gwern.net/Tanks\#should-we-tell-stories-we-know-arent-true]. Aunque en la misma fuente se pueden encontrar ejemplos documentados de errores de generalización en aplicaciones de \textit{Machine Learning} producto de haber entrenado con \textit{datasets} sesgados.
+
+En nuestra implementación que sigue un enfoque clásico basándonos en \cite{tesis-parodi} utilizaremos para la fase de clasificación \textit{SVM} para la extracción de características el método de grilla circular que explicaremos en las subsecciones siguientes \textit{SVM} cuando tratemos con el enfoque clásico y usemos 
+
+Del mismo modo es muy importante definir bien el formato de los datos (ver si se trata de un problema de regresión una clasificación y en último caso definir bien las clases)
+

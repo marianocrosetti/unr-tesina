@@ -1,0 +1,50 @@
+\chapter{Experimentos} \label{chapter:experimentos}
+
+\section{Formulación del problema en la práctica}
+
+En este capítulo describimos cómo se lleva a la práctica la formulación presentada en el capítulo \ref{formulacion-del-problema}: el problema a resolver es determinar si dos firmas son de la misma autoría, con el fin de detectar errores de confección en los telegramas electorales que tienen varias páginas y donde las firmas deben coincidir entre página y página. Un ejemplo de telegrama real puede verse en \url{https://drive.google.com/file/d/1X36KFIH7QEQzfrL6or0WEYuK1FaxuMsS}. 
+
+De acuerdo con los objetivos definidos en la sección \ref{section:objectives}, buscamos maximizar la \textit{precision} sujeta a obtener un \textit{recall} no menor que $0.9$. Para ello nos basamos en trabajos anteriores de problemas similares y, en particular, utilizamos la tesis de Parodi \cite{tesis-parodi} como principal punto de comparación. La tesis de Parodi resuelve el problema de \textit{VAFM} (\textit{Verificación Automática de Firmas Manuscritas}), donde se dispone de $K$ autores y, dada una firma que declara ser de un autor $i$, se debe verificar su autenticidad entrenando un clasificador por autor. En nuestro caso el enfoque es distinto: queremos detectar errores de confección y no falsificaciones, por lo que no consideramos firmas falsificadas (hechas por un autor pretendiendo ser otro), sino únicamente firmas auténticas y sus combinaciones. 
+
+El problema es conceptualmente cercano al reconocimiento facial (\textit{Face Recognition}/\textit{Face Verification}), donde también se comparan instancias biométricas de distintas personas. En los experimentos aprovechamos ideas de la literatura de reconocimiento facial y de redes siamesas desarrolladas por grandes actores de la industria (por ejemplo, trabajos recientes sobre reconocimiento de caras basados en redes convolucionales profundas).
+
+\section{Conjuntos de datos}
+
+\subsection{Conjuntos de datos curados}
+
+En una primera etapa no contamos con un \textit{dataset} de pares de firmas listo para usar, sino con una colección de telegramas. Para acotar el problema de similaridad de firmas y poder comparar los resultados con soluciones existentes, trabajamos inicialmente con \textit{datasets} curados de firmas manuscritas y recién luego nos movemos al conjunto de datos generado por nosotros.
+
+Uno de los conjuntos de datos considerados es \textbf{CEDAR Signature}\footnote{Disponible, por ejemplo, en repositorios como \url{https://paperswithcode.com/dataset/cedar-signature}.}, que contiene 1\,320 firmas de 55 autores (24 auténticas por autor) y 1\,320 falsificaciones. Siguiendo los criterios de nuestro problema, no utilizamos las falsificaciones directamente, sino que generamos pares negativos (\textit{falsos matcheos}) combinando firmas auténticas de distintos autores.
+
+Otro conjunto de datos utilizado es \textbf{SigComp 2009}, que fue desarrollado para la competencia de verificación de firmas del ICDAR 2009. Este conjunto se divide en dos partes: un subconjunto de entrenamiento y uno de evaluación, provistos por instituciones distintas.
+
+\paragraph{SigComp 2009 Train (NISDICC).} El subconjunto de entrenamiento fue proporcionado por el \textit{National Institute of Standards and Technology} (NIST) y el \textit{Document Image and Character Collection} (DICC). Contiene firmas de 12 autores auténticos (identificados como 001--012) y 31 falsificadores (021--051). Cada autor auténtico firmó 5 originales, y en general cada falsificador realizó 5 falsificaciones por autor auténtico; sin embargo, hay falsificaciones faltantes (1\,898 archivos en lugar de 1\,920). Las imágenes tienen diferentes tamaños y están en escala de grises.
+
+\paragraph{SigComp 2009 Test (NFI).} El subconjunto de evaluación fue proporcionado por el \textit{Netherlands Forensic Institute} (NFI). Contiene firmas de autores identificados del 001 al 100, aunque muchos identificadores no están presentes. No todos los autores son falsificadores (la cantidad de falsificadores es menor que la cantidad de autores). En general, cada autor auténtico firmó 12 originales (algunos firmaron 11 y uno firmó 6), y cada falsificador realizó 6 falsificaciones para 2--4 autores auténticos. También hay falsificaciones faltantes (1\,564 archivos en lugar de 1\,953). Las imágenes tienen diferentes tamaños y están en escala de grises.
+
+\subsection{Confección del \textit{dataset} propio (cropeo de firmas)}
+
+\textcolor{red}{\textbf{TODO:} Mencionar que detectar firmas en ubicaciones arbitrarias o segmentar qué píxeles pertenecen a cada firma es un problema en sí mismo, que no abordamos aquí gracias a que la estructura del telegrama es fija. Citar \cite{handwritten-text-segmentation} como referencia al problema de segmentación de texto manuscrito.}
+
+Para evaluar los modelos en un escenario más cercano a la aplicación real, construimos un conjunto de datos propio a partir de telegramas electorales. Inicialmente no contamos con un \textit{dataset} propiamente dicho (de pares de firmas, ni siquiera de firmas aisladas), sino con imágenes completas de telegramas. Aprovechamos que la localización de las firmas en el formulario es fija para extraerlas mediante recortes sobre el telegrama. Luego, para detectar si hay o no hay firma en dicha posición, probamos primero una heurística sencilla basada en el tamaño de las componentes conexas (alrededor de 0.90 de \textit{accuracy}); tras una revisión manual rápida de la clasificación obtenida y algunas correcciones, entrenamos un clasificador de redes neuronales que alcanzó aproximadamente 0.99 de \textit{accuracy}. Esto ilustra cómo un modelo puede servir como herramienta para un paso intermedio de limpieza y construcción del \textit{dataset}.
+
+\section{Resultados}
+
+En todas las gráficas de métricas (por ejemplo, curvas ROC y Precision--Recall) fijamos la escala de los ejes $x$ e $y$ en el intervalo $[0, 1]$ para que las comparaciones entre modelos sean coherentes y visualmente consistentes. Además, para comparar de forma resumida el desempeño entre distintas particiones de validación cruzada reportamos también la métrica $F_1$, definida como la media armónica entre \textit{precision} y \textit{recall}.
+
+\subsection{Resultados utilizando la tesis de Marianela}
+
+En primer lugar reproducimos, en la medida de lo posible, el esquema basado en extracción de \textit{features} manuales propuesto en \cite{tesis-parodi}, utilizando los descriptores construidos sobre grillas y entrenando clasificadores como \textit{Random Forest} o SVM sobre los vectores característicos. Sobre el conjunto de datos de referencia SigComp2009 se obtiene, por ejemplo, una \textit{performance} del orden de $0.85$ para la métrica de interés combinando extracción de características manual (Parodi) con \textit{Random Forest}.
+
+\subsection{Resultados utilizando redes siamesas}
+
+Como siguiente paso entrenamos redes siamesas convolucionales que reciben pares de recortes de firmas y producen un puntaje de similitud a partir de la distancia entre sus \textit{embeddings}, tal como se describe en la subsección \ref{subsection:siamesas}. Aquí se incluirán los resultados cuantitativos comparables con el enfoque basado en \cite{tesis-parodi} (falta completar esta parte con los valores finales de \textit{precision}, \textit{recall} y curvas ROC / Precision--Recall).
+
+\subsection{Resultados con diferentes arquitecturas de redes siamesas}
+
+Exploramos diferentes arquitecturas convolucionales para el \textit{encoder} $G_W$ (variando profundidad, número de filtros y uso de bloques residuales tipo ResNet) y analizamos su impacto sobre las métricas de similitud. Esta sección detalla comparaciones entre arquitecturas más pequeñas y más profundas, así como el efecto de utilizar modelos preentrenados y \textit{fine-tuning} (resta completar con los experimentos definitivos).
+
+\subsection{Online triplet loss y offline triplet loss}
+
+Finalmente entrenamos modelos siameses utilizando \textit{triplet loss} (ver \ref{subsubsection:triplet-loss}), comparando estrategias de generación de tripletas \textit{offline} (precomputadas) y \textit{online} (minado de tripletas dentro de cada \textit{mini-batch}). El conjunto de datos se genera particionando autores entre entrenamiento y test (no se mezclan firmas de un mismo autor entre ambos, y se utilizan únicamente firmas originales, no falsificaciones). En esta sección se reportan las métricas alcanzadas por cada estrategia y se discuten sus ventajas prácticas en términos de estabilidad de entrenamiento y capacidad de generalización (pendiente de completar con los números finales).
+
