@@ -30,10 +30,14 @@ def telegramas_pdf_generator(PATH):
     """
     assert os.path.isdir(PATH)
     for subfolder in os.listdir(PATH):
+        if subfolder.startswith('.'):
+            continue  # skip hidden entries like .DS_Store
         subpath = os.path.join(PATH, subfolder)
         assert subfolder.isdigit()
         assert os.path.isdir(subpath)
         for pdf_filename in os.listdir(subpath):
+            if pdf_filename.startswith('.'):
+                continue
             assert pdf_filename.endswith('.pdf')
             pdf_filepath = os.path.join(subpath, pdf_filename)
             yield pdf_filepath
@@ -251,7 +255,8 @@ def scale_image(img):
     Returns:
         PIL.Image: Resized image at 1500x2465 pixels using antialiasing.
     """
-    return img.resize((1500, 2465), PIL.Image.ANTIALIAS)
+    # PIL.Image.ANTIALIAS fue removido en Pillow 10; LANCZOS es el reemplazo directo.
+    return img.resize((1500, 2465), PIL.Image.Resampling.LANCZOS)
 
 def preprocess_pipeline(img):
     """

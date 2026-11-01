@@ -32,12 +32,32 @@ from math import *
 import cv2
 import PIL
 from PIL import Image, ImageDraw, ImageOps
-import imageio
 from shutil import copyfile
 
 # Computer vision and QR detection
+#
+# Homebrew on Apple Silicon installs libzbar under /opt/homebrew, which
+# ctypes.util.find_library doesn't search by default, so pyzbar's import
+# would fail with "Unable to find zbar shared library". We patch find_library
+# to point at the homebrew copy if it exists.
+import ctypes.util as _ctypes_util
+_ZBAR_CANDIDATES = [
+    "/opt/homebrew/opt/zbar/lib/libzbar.dylib",
+    "/usr/local/opt/zbar/lib/libzbar.dylib",
+]
+for _zbar_lib in _ZBAR_CANDIDATES:
+    if os.path.exists(_zbar_lib):
+        _orig_find_library = _ctypes_util.find_library
+
+        def _find_library(name, _orig=_orig_find_library, _zbar=_zbar_lib):
+            if name == "zbar":
+                return _zbar
+            return _orig(name)
+
+        _ctypes_util.find_library = _find_library
+        break
+
 from pyzbar.pyzbar import decode
-import pytesseract
 
 # PDF processing
 from pdf2image import convert_from_path, convert_from_bytes, pdfinfo_from_path
@@ -82,9 +102,6 @@ import tqdm
 import joblib
 import multiprocessing
 from multiprocessing import Pool
-
-# Serialization
-import pickle5 as pickle
 
 # Optional: fastbook utilities (comment out if not available)
 try:
